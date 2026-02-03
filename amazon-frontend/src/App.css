@@ -1,0 +1,430 @@
+/* Amazon Clone - Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Amazon Ember", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #EAEDED;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #EAEDED;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Amazon Button Styles */
+.amazon-button {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border: 1px solid #a88734;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  color: #0F1111;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.1s ease;
+}
+
+.amazon-button:hover {
+  background: linear-gradient(to bottom, #f5d78e, #eeb933);
+}
+
+.amazon-button:active {
+  background: linear-gradient(to bottom, #f0c14b, #e6a800);
+}
+
+.amazon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.amazon-button-secondary {
+  background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
+  border: 1px solid #adb1b8;
+}
+
+.amazon-button-secondary:hover {
+  background: linear-gradient(to bottom, #e7e9ec, #d8dade);
+}
+
+/* Orange Buy Now Button */
+.amazon-button-orange {
+  background: linear-gradient(to bottom, #FFa41c, #FF8F00);
+  border: 1px solid #e77600;
+}
+
+.amazon-button-orange:hover {
+  background: linear-gradient(to bottom, #FF8F00, #e77600);
+}
+
+/* Price Styles */
+.price-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.price-symbol {
+  font-size: 13px;
+  position: relative;
+  top: -0.5em;
+  color: #0F1111;
+}
+
+.price-whole {
+  font-size: 28px;
+  font-weight: 400;
+  color: #0F1111;
+}
+
+.price-decimal {
+  font-size: 13px;
+  position: relative;
+  top: -0.5em;
+  color: #0F1111;
+}
+
+/* Rating Stars */
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-count {
+  color: #007185;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.rating-count:hover {
+  color: #C7511F;
+  text-decoration: underline;
+}
+
+/* Links */
+.amazon-link {
+  color: #007185;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.amazon-link:hover {
+  color: #C7511F;
+  text-decoration: underline;
+}
+
+/* Section Divider */
+.section-divider {
+  height: 1px;
+  background-color: #DDD;
+  margin: 15px 0;
+}
+
+/* Input Styles */
+.amazon-input {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 14px;
+  border: 1px solid #888C8C;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.amazon-input:focus {
+  border-color: #E77600;
+  box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
+}
+
+/* Select Dropdown */
+.amazon-select {
+  padding: 7px 10px;
+  font-size: 14px;
+  border: 1px solid #888C8C;
+  border-radius: 8px;
+  background-color: #F0F2F2;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
+}
+
+.amazon-select:hover {
+  background-color: #E3E6E6;
+}
+
+/* Checkbox Styles */
+.amazon-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #FF9900;
+}
+
+/* Quantity Selector */
+.quantity-selector {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #D5D9D9;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #F0F2F2;
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
+}
+
+.quantity-selector button {
+  padding: 6px 12px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #0F1111;
+  transition: background-color 0.15s ease;
+}
+
+.quantity-selector button:hover {
+  background-color: #E3E6E6;
+}
+
+.quantity-selector input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  background: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 0;
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+.badge-deal {
+  background-color: #CC0C39;
+  color: #FFFFFF;
+}
+
+.badge-limited {
+  background-color: #CC0C39;
+  color: #FFFFFF;
+}
+
+.badge-bestseller {
+  background-color: #FF9900;
+  color: #FFFFFF;
+}
+
+.badge-prime {
+  background: #0F1111;
+  color: #00A8E1;
+  font-weight: 700;
+}
+
+/* Prime Badge */
+.prime-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+}
+
+.prime-badge img {
+  height: 18px;
+}
+
+/* Delivery Info */
+.delivery-text {
+  font-size: 14px;
+  color: #0F1111;
+}
+
+.delivery-free {
+  color: #007600;
+  font-weight: 700;
+}
+
+.delivery-date {
+  color: #0F1111;
+  font-weight: 700;
+}
+
+/* Stock Status */
+.in-stock {
+  color: #007600;
+  font-size: 14px;
+}
+
+.out-of-stock {
+  color: #B12704;
+  font-size: 14px;
+}
+
+/* Card Styles */
+.amazon-card {
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.amazon-card h2 {
+  font-size: 21px;
+  font-weight: 700;
+  color: #0F1111;
+  margin-bottom: 15px;
+}
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+
+  .grid-4,
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Toast Notifications */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #FFFFFF;
+  border: 1px solid #D5D9D9;
+  border-left: 4px solid #067D62;
+  padding: 15px 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  animation: slideIn 0.3s ease;
+}
+
+.toast.success {
+  border-left-color: #067D62;
+}
+
+.toast.error {
+  border-left-color: #C40000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #DDD;
+  border-top-color: #F90;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State */
+.error-container {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #FFFFFF;
+}
+
+.error-container h2 {
+  font-size: 24px;
+  color: #0F1111;
+  margin-bottom: 15px;
+}
+
+.error-container p {
+  font-size: 14px;
+  color: #565959;
+  margin-bottom: 20px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F0F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C0C0C0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0A0A0;
+}

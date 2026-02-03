@@ -1,0 +1,154 @@
+/* Amazon Clone - Base Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Amazon Ember", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #EAEDED;
+  color: #0F1111;
+  line-height: 1.5;
+}
+
+/* Custom font face for Amazon Ember (fallback to system fonts) */
+@font-face {
+  font-family: 'Amazon Ember';
+  src: local('Amazon Ember'), local('AmazonEmber'), local('Helvetica Neue'), local('Arial');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amazon Ember';
+  src: local('Amazon Ember Bold'), local('AmazonEmber-Bold'), local('Helvetica Neue Bold'), local('Arial Bold');
+  font-weight: 700;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-sm {
+  gap: 8px;
+}
+
+.gap-md {
+  gap: 16px;
+}
+
+.gap-lg {
+  gap: 24px;
+}
+
+/* Color Classes */
+.text-primary {
+  color: #0F1111;
+}
+
+.text-secondary {
+  color: #565959;
+}
+
+.text-link {
+  color: #007185;
+}
+
+.text-price {
+  color: #B12704;
+}
+
+.text-success {
+  color: #007600;
+}
+
+.text-error {
+  color: #C40000;
+}
+
+/* Selection styling */
+::selection {
+  background-color: #FBD8B4;
+  color: #0F1111;
+}
+
+/* Focus styling for accessibility */
+:focus-visible {
+  outline: 2px solid #E77600;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+
+  .amazon-header,
+  .header-bottom {
+    display: none;
+  }
+}

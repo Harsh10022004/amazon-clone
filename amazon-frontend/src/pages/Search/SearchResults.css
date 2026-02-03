@@ -1,0 +1,408 @@
+/* Amazon Search Results - Pixel Perfect Styling */
+
+.search-page {
+  background-color: #FFFFFF;
+  min-height: calc(100vh - 120px);
+}
+
+.search-container {
+  display: flex;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 15px;
+  gap: 20px;
+}
+
+/* Sidebar */
+.search-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  padding-right: 20px;
+  border-right: 1px solid #DDD;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F1111;
+  margin-bottom: 12px;
+}
+
+.department-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.department-item {
+  font-size: 14px;
+  color: #0F1111;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.department-item:hover {
+  color: #C7511F;
+}
+
+.department-item.active {
+  font-weight: 700;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background-color: #DDD;
+  margin: 15px 0;
+}
+
+.review-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-option {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #007185;
+}
+
+.review-option:hover {
+  color: #C7511F;
+}
+
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.price-item {
+  font-size: 14px;
+  color: #007185;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.price-item:hover {
+  color: #C7511F;
+  text-decoration: underline;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #0F1111;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.filter-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: #FF9900;
+}
+
+/* Main Content */
+.search-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.results-info {
+  font-size: 14px;
+  color: #565959;
+  margin-bottom: 15px;
+}
+
+.results-count {
+  font-size: 16px;
+  color: #0F1111;
+}
+
+.search-term {
+  color: #C7511F;
+  font-weight: 700;
+}
+
+.sort-container {
+  margin-bottom: 15px;
+}
+
+.sort-dropdown {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #D5D9D9;
+  border-radius: 8px;
+  background-color: #F0F2F2;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
+}
+
+.sort-dropdown:hover {
+  background-color: #E3E6E6;
+}
+
+/* Products Grid */
+.products-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.product-card-search {
+  display: flex;
+  gap: 16px;
+  padding: 15px;
+  border-bottom: 1px solid #DDD;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-card-search:hover {
+  background-color: #F7FAFA;
+}
+
+.overall-pick-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+.badge-label {
+  background-color: #232F3E;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.product-image-box {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 400;
+  color: #0F1111;
+  line-height: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.product-name:hover {
+  color: #C7511F;
+}
+
+.product-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rating-text {
+  font-size: 12px;
+  color: #007185;
+  margin-left: 4px;
+}
+
+.review-count {
+  font-size: 14px;
+  color: #007185;
+}
+
+.bought-text {
+  font-size: 14px;
+  color: #565959;
+  margin: 4px 0;
+}
+
+.price-row {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+}
+
+.price-dollar {
+  font-size: 13px;
+  vertical-align: top;
+  position: relative;
+  top: 2px;
+  color: #0F1111;
+}
+
+.price-main {
+  font-size: 28px;
+  font-weight: 400;
+  color: #0F1111;
+  line-height: 1;
+}
+
+.price-cents {
+  font-size: 13px;
+  vertical-align: top;
+  position: relative;
+  top: 2px;
+  color: #0F1111;
+}
+
+.delivery-row {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.free-delivery {
+  color: #0F1111;
+}
+
+.delivery-date {
+  color: #0F1111;
+  font-weight: 700;
+}
+
+.prime-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.stock-text {
+  font-size: 14px;
+  color: #007600;
+}
+
+.add-cart-button {
+  align-self: flex-start;
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border: 1px solid #a88734;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #0F1111;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.add-cart-button:hover {
+  background: linear-gradient(to bottom, #f5d78e, #eeb933);
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-results h2 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #0F1111;
+  margin-bottom: 10px;
+}
+
+.no-results p {
+  font-size: 14px;
+  color: #565959;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #DDD;
+  border-top-color: #F90;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .search-sidebar {
+    display: none;
+  }
+
+  .product-card-search {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-image-box {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .product-info {
+    align-items: center;
+  }
+
+  .add-cart-button {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    padding: 10px;
+  }
+
+  .product-image-box {
+    height: 150px;
+  }
+
+  .price-main {
+    font-size: 22px;
+  }
+}
