@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
 import { cartAPI, orderAPI } from '../../config/api';
+import { fixImageUrl } from '../../utils/imageUtils';
 import './Cart.css';
 
 const Cart = () => {
@@ -162,7 +163,7 @@ const Cart = () => {
 
                 <div className="item-image-container" onClick={() => navigate(`/product/${item.product_id}`)}>
                   <img
-                    src={item.primary_image}
+                    src={fixImageUrl(item.primary_image)}
                     alt={item.title}
                     className="item-image"
                   />

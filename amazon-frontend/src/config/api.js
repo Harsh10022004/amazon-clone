@@ -1,7 +1,14 @@
 import axios from 'axios';
 
 // API Base URL - Update this to match your backend
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://amazon-clone-agp5.onrender.com/api';
+export const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+
+// SAFETY CHECK: Warn if running in production but using localhost API
+if (process.env.NODE_ENV === 'production' && API_BASE_URL.includes('localhost')) {
+  console.error('CRITICAL CONFIGURATION ERROR: App is running in production mode but REACT_APP_API_URL is pointing to localhost. API calls will fail. Please set REACT_APP_API_URL in your deployment settings.');
+  // Optional: Alert for immediate visibility during testing
+  // alert('CONFIG ERROR: REACT_APP_API_URL is missing or set to localhost!');
+}
 
 // Create axios instance with default config
 const api = axios.create({
@@ -13,15 +20,19 @@ const api = axios.create({
 });
 
 // Request interceptor for API calls
-api.interceptors.request.use((config) => {
-  // Only add user_id to requests that actually have a body
-  if (['post', 'put', 'patch'].includes(config.method) && config.data) {
-    if (!config.data.user_id) {
+api.interceptors.request.use(
+  (config) => {
+    // For demo purposes, we're using hardcoded user_id = 1
+    // In production, you'd get this from authentication
+    if (config.data && !config.data.user_id) {
       config.data.user_id = 1;
     }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
   }
-  return config;
-});
+);
 
 // Response interceptor for API calls
 api.interceptors.response.use(
@@ -50,16 +61,16 @@ export const productAPI = {
   getProducts: (params = {}) => {
     return api.get('/products', { params });
   },
-  
+
   // Get single product details
   getProductById: (id) => {
     return api.get(`/products/${id}`);
   },
-  
+
   // Search products
   searchProducts: (query, params = {}) => {
-    return api.get('/products/search', { 
-      params: { q: query, ...params } 
+    return api.get('/products/search', {
+      params: { q: query, ...params }
     });
   },
 };
@@ -69,22 +80,22 @@ export const cartAPI = {
   getCart: () => {
     return api.get('/cart');
   },
-  
+
   // Add item to cart
   addToCart: (productId, quantity = 1) => {
     return api.post('/cart', { product_id: productId, quantity });
   },
-  
+
   // Update cart item quantity
   updateCartItem: (productId, quantity) => {
     return api.put(`/cart/${productId}`, { quantity });
   },
-  
+
   // Remove item from cart
   removeFromCart: (productId) => {
     return api.delete(`/cart/${productId}`);
   },
-  
+
   // Clear entire cart
   clearCart: () => {
     return api.delete('/cart');
@@ -96,12 +107,12 @@ export const orderAPI = {
   getOrders: () => {
     return api.get('/orders');
   },
-  
+
   // Get specific order details
   getOrderById: (id) => {
     return api.get(`/orders/${id}`);
   },
-  
+
   // Place new order
   placeOrder: (shippingAddress) => {
     return api.post('/orders', { shipping_address: shippingAddress });
@@ -113,12 +124,12 @@ export const wishlistAPI = {
   getWishlist: () => {
     return api.get('/wishlist');
   },
-  
+
   // Add item to wishlist
   addToWishlist: (productId) => {
     return api.post('/wishlist', { product_id: productId });
   },
-  
+
   // Remove item from wishlist
   removeFromWishlist: (productId) => {
     return api.delete(`/wishlist/${productId}`);

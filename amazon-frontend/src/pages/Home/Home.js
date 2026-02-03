@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { productAPI, cartAPI } from '../../config/api';
+import { fixImageUrl } from '../../utils/imageUtils';
 import './Home.css';
 
 const Home = () => {
@@ -119,7 +120,7 @@ const Home = () => {
       <div className="card-grid-2x2">
         {items.map((product) => (
           <div className="grid-item" key={product.id} onClick={() => handleProductClick(product.id)}>
-            <img src={product.primary_image} alt={product.title} onError={handleImageError} />
+            <img src={fixImageUrl(product.primary_image)} alt={product.title} onError={handleImageError} />
             <span>{product.title.split(' ').slice(0, 3).join(' ')}</span>
           </div>
         ))}
@@ -138,7 +139,7 @@ const Home = () => {
       <h2 className="card-title">{title}</h2>
       <div className="single-product-box" onClick={() => item && handleProductClick(item.id)}>
         {item ? (
-          <img src={item.primary_image} alt={item.title} onError={handleImageError} />
+          <img src={fixImageUrl(item.primary_image)} alt={item.title} onError={handleImageError} />
         ) : (
           <div className="placeholder-box">Explore {category}</div>
         )}
@@ -154,7 +155,7 @@ const Home = () => {
       <div className="card-grid-1x2">
         {items.map((product) => (
           <div className="grid-item double-item" key={product.id} onClick={() => handleProductClick(product.id)}>
-            <img src={product.primary_image} alt={product.title} onError={handleImageError} />
+            <img src={fixImageUrl(product.primary_image)} alt={product.title} onError={handleImageError} />
             <span>{product.title.split(' ').slice(0, 3).join(' ')}</span>
           </div>
         ))}
@@ -262,7 +263,7 @@ const Home = () => {
                 onClick={() => handleProductClick(product.id)}
               >
                 <div className="deal-badge">Up to {Math.floor(Math.random() * 30 + 20)}% off</div>
-                <img src={product.primary_image} alt={product.title} className="deal-image" onError={handleImageError} />
+                <img src={fixImageUrl(product.primary_image)} alt={product.title} className="deal-image" onError={handleImageError} />
                 <div className="deal-limited">Limited time deal</div>
                 <div className="deal-price">${Number(product.price).toFixed(2)}</div>
               </div>
@@ -280,7 +281,7 @@ const Home = () => {
                 className="product-scroll-item"
                 onClick={() => handleProductClick(product.id)}
               >
-                <img src={product.primary_image} alt={product.title} onError={handleImageError} />
+                <img src={fixImageUrl(product.primary_image)} alt={product.title} onError={handleImageError} />
                 <div className="scroll-item-title">{product.title.substring(0, 30)}...</div>
                 <div className="scroll-item-price">${Number(product.price).toFixed(2)}</div>
               </div>

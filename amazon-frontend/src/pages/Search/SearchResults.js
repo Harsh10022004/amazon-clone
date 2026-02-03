@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { FaStar, FaCheck } from 'react-icons/fa';
 import { productAPI, cartAPI } from '../../config/api';
+import { fixImageUrl } from '../../utils/imageUtils';
 
 /* Inline Styles to guarantee visibility - bypassing any CSS file issues */
 const styles = {
@@ -190,7 +191,7 @@ const SearchResults = () => {
               >
                 <div style={styles.imageBox}>
                   <img
-                    src={product.primary_image || 'https://m.media-amazon.com/images/I/71p-tHQ0u1L._AC_SX679_.jpg'}
+                    src={fixImageUrl(product.primary_image) || 'https://m.media-amazon.com/images/I/71p-tHQ0u1L._AC_SX679_.jpg'}
                     alt={product.title}
                     style={styles.img}
                     onError={(e) => e.target.src = 'https://m.media-amazon.com/images/I/71p-tHQ0u1L._AC_SX679_.jpg'}

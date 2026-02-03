@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaStar, FaCheck, FaMapMarkerAlt } from 'react-icons/fa';
 import { productAPI, cartAPI } from '../../config/api';
+import { fixImageUrl } from '../../utils/imageUtils';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
@@ -39,8 +40,10 @@ const ProductDetail = () => {
   };
 
   const getImageUrl = (img) => {
-    if (typeof img === 'string') return img;
-    return img.image_url || img.url || '';
+    let url = '';
+    if (typeof img === 'string') url = img;
+    else url = img.image_url || img.url || '';
+    return fixImageUrl(url);
   };
 
   const handleAddToCart = async () => {
